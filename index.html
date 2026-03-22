@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janken App - じゃんけんアプリ</title>
+    <meta name="description" content="モダンなブラウザ向けじゃんけんアプリです。">
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container glassmorphism">
+        <header>
+            <h1>JANKEN</h1>
+            <p>さあ、私と勝負しましょう！</p>
+        </header>
+
+        <div class="game-area">
+            <div class="cpu-area">
+                <span class="label">COM (相手)</span>
+                <div id="cpu-hand" class="hand-display">❓</div>
+            </div>
+
+            <div class="result-display">
+                <h2 id="result-text">準備完了</h2>
+            </div>
+            
+            <div class="player-area">
+                <span class="label">あなた (Player)</span>
+                <div class="controls">
+                    <button class="hand-btn" onclick="playTurn('gu')">
+                        <span class="emoji">✊</span>
+                        <span class="text">グー</span>
+                    </button>
+                    <button class="hand-btn" onclick="playTurn('choki')">
+                        <span class="emoji">✌️</span>
+                        <span class="text">チョキ</span>
+                    </button>
+                    <button class="hand-btn" onclick="playTurn('pa')">
+                        <span class="emoji">✋</span>
+                        <span class="text">パー</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <p>現在の成績: <span id="win-count">0</span>勝 <span id="lose-count">0</span>敗 <span id="draw-count">0</span>あいこ</p>
+            <button id="reset-btn" onclick="resetStats()">成績リセット</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
